@@ -8,6 +8,8 @@
       
     </block>
     <button bindtap="getuser">123</button>
+    <mp-badge ext-class="blue"></mp-badge>
+    <mp-badge content="99+"></mp-badge>
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>

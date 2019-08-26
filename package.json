@@ -1,0 +1,23 @@
+{
+  "name": "miniprogramsimple",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "weui-miniprogram": "^0.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i-johnxz/miniprogramsimple.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/i-johnxz/miniprogramsimple/issues"
+  },
+  "homepage": "https://github.com/i-johnxz/miniprogramsimple#readme"
+}
