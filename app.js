@@ -1,4 +1,5 @@
 //app.js
+const util = require('./utils/util.js')
 App({
   onLaunch: function () {
     var vm = this;
@@ -6,26 +7,9 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
     // 登录
-    wx.login({
-      success: res => {
-        wx.request({
-          url: 'http://localhost:5000/api/wechat/getUserAccessTokenAndOpenId/miniProgram/wxdeb9a8a2cb0cadca/'+ res.code,
-          success: function (res) {
-            var openid = res.data.result.openid
-            wx.request({
-              url: 'http://localhost:5000/api/token/login?identity=' + openid,
-              success: function (response1) {
-                var token = response1.data.result
-                vm.globalData.userToken = token
-
-              }
-            })
-          }
-        })
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
+    util.request('http://localhost:5000/api/token/UserSay').then(function(result) {
+      console.log('result', result)
     })
     // 获取用户信息
     // wx.getSetting({

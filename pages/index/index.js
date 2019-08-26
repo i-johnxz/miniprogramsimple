@@ -1,6 +1,8 @@
 //index.js
 //获取应用实例
 const app = getApp()
+const util = require('../../utils/util.js')
+
 
 Page({
   data: {
@@ -16,24 +18,13 @@ Page({
     })
   },
   getuser: function () {
-    var token = app.globalData.userToken
-    wx.request({
-      url: 'http://localhost:5000/api/token/AdminSay',
-      header: {
-        "Authorization": "Bearer " + token
-      },
-      success: function (result) {
-        console.log('result', result)
-      }
+    //var token = wx.setStorageSync('token', token)
+    util.request('http://localhost:5000/api/token/AdminSay').then(function(result) {
+      console.log('result', result)
     })
-    wx.request({
-      url: 'http://localhost:5000/api/token/UserSay',
-      header: {
-        "Authorization": "Bearer " + token
-      },
-      success: function (result) {
-        console.log('result', result)
-      }
+
+    util.request('http://localhost:5000/api/token/UserSay').then(function (result) {
+      console.log('result', result)
     })
   },
   onLoad: function () {
