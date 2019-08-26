@@ -1,5 +1,5 @@
 //app.js
-const util = require('./utils/util.js')
+import util from './utils/util.js'
 App({
   onLaunch: function () {
     var vm = this;

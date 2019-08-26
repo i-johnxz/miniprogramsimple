@@ -1,4 +1,4 @@
-const api = require('./api.js')
+import api from './api.js'
 
 const formatTime = date => {
   const year = date.getFullYear()
@@ -33,7 +33,7 @@ const request = (url, data = {}, method = 'GET') => {
           if (res.statusCode === 401) {
              wechatLogin().then((res) => {
                var code = res.code;
-               request(api.default.getOpenApiByJs, {
+               request(api.getOpenApiByJs, {
                  AppId: 'wxdeb9a8a2cb0cadca',
                  Code: code
                }, 'POST').then(function (res) {
