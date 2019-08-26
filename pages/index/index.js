@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-const util = require('../../utils/util.js')
+import { request } from '../../utils/util.js'
 
 
 Page({
@@ -19,11 +19,11 @@ Page({
   },
   getuser: function () {
     //var token = wx.setStorageSync('token', token)
-    util.request('http://localhost:5000/api/token/AdminSay').then(function(result) {
+    request('http://localhost:5000/api/token/AdminSay').then(function(result) {
       console.log('result', result)
     })
 
-    util.request('http://localhost:5000/api/token/UserSay').then(function (result) {
+    request('http://localhost:5000/api/token/UserSay').then(function (result) {
       console.log('result', result)
     })
   },
